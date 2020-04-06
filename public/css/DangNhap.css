@@ -1,0 +1,174 @@
+* {
+    padding: 0px;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-image: url(../asset/image/background.png);
+}
+
+.col-sm-6 {
+    height: 750px;
+}
+
+.text-login {
+    height: 50px;
+    width: 300px;
+    font-size: 50px;
+    font-family: myfont;
+    color: white;
+    text-align: center;
+    justify-items: center;
+    margin-top: 40px;
+    margin-left: 150px;
+}
+
+.form-login {
+    width: 400px;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-style: double;
+    border-color: white;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.login {
+    margin: 30px;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 70px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    list-style: none;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button a {
+    height: 50px;
+    width: 100px;
+    text-decoration: none;
+    color: white;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.btn-group {
+    width: 300px;
+    height: 100px;
+}
+
+.btn-group .button {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    text-decoration: none;
+    cursor: pointer;
+    width: 300px;
+    display: block;
+    margin-left: 20px;
+}
+
+.btn-group .button h1 {
+    float: left;
+    color: white;
+    margin: 15px 25px 0px;
+    font-size: 16px;
+}
+
+.btn-group .button:hover {
+    background-color: royalblue;
+}
+
+.hr- {
+    position: relative;
+    width: 250px;
+    height: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.hr- hr {
+    position: absolute;
+    height: 1px;
+    width: 250px;
+    margin-top: 10px;
+}
+
+.hr- h {
+    position: absolute;
+    z-index: 2;
+    height: 20px;
+    width: 30px;
+    background-color: rgba(231, 229, 229, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 100px;
+    color: white;
+}
+
+.DangKi {
+    margin: 80px 20px;
+    height: 30px;
+    width: 300px;
+}
+
+.DangKi .h1 {
+    float: left;
+    color: white;
+    font-size: 10px;
+}
+
+.DangKi a {
+    float: left;
+    color: red;
+    font-size: 10px;
+    margin-top: 19px;
+    margin-left: 5px;
+}
+
+.footer {
+    height: 300px;
+    width: 700px;
+    font-size: 80px;
+    font-family: myfont;
+    color: white;
+    margin-top: 100px;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url(../asset/font/IMPRISHA.TTF);
+}

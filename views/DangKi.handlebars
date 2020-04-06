@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link Boostrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- link CSS -->
+    <link rel="stylesheet" href="../public/css/DangKi.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="text-dangki">
+                    Đăng Nhập
+                </div>
+                <div class="form-login">
+                    <div class="login">
+                        <form action="/dangki" method="post">
+                            <div class="form-group">
+                                <label style="color: white;" for="user">User Name:</label>
+                                <input style="background-color: rgba(0, 0, 0, 0.1);color: white" type="user" class="form-control" placeholder="Enter user name" id="username" name="username">
+                            </div>
+                            <div class="form-group">
+                                <label style="color: white;" for="phone">Phone Number:</label>
+                                <input style="background-color: rgba(0, 0, 0, 0.1);color: white" type="phone" class="form-control" placeholder="Enter phone number" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label style="color: white;" for="email">Email address:</label>
+                                <input style="background-color: rgba(0, 0, 0, 0.1);color: white" type="email" class="form-control" placeholder="Enter email" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label style="color: white;" for="pwd">Password:</label>
+                                <input style="background-color: rgba(0, 0, 0, 0.1);color: white;" type="password" class="form-control" placeholder="Enter password" id="password" name="password">
+                            </div>
+                            <div class="form-group">
+                                <label style="color: white;" for="pwd">Password confirm:</label>
+                                <input style="background-color: rgba(0, 0, 0, 0.1);color: white;" type="password" class="form-control" placeholder="Enter password confirm" id="password2" name="passwordConfirm">
+                            </div>
+
+                            <button type="submit" class="button" style="vertical-align:middle">
+                                <span style="color: white;">
+                                   Đăng Kí
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="footer">
+                    Xin Chào Đến Với <br> Brcze5
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

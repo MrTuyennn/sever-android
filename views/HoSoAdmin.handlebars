@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="container-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- link CSS -->
+    <link rel="stylesheet" href="../public/css/HoSoAdmin.css">
+    <!-- link Icon -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row" style="background:#9932CC;opacity: 0.7">
+                    <a style="margin-left: 100px;font-size: 30px;color: white;">BRCZE5</a>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <a style="font-size: 20px;color: black;float: left;margin-top: 10px;margin-right: 50px;">Hồ Sơ Admin</a>
+                <a style="float: left;margin-left: 270px;margin-top: 10px;">Tài Khoản</a>
+                <a style="float: left;margin-top: 10px;margin-left: 30px;">Đăng Xuất</a>
+            </div>
+        </div>
+        <div class="row" style="height: 680px;">
+            <div class="col-sm-3 border" style="background:#9932CC;opacity: 0.7;">
+                <button type="button" class="btn">
+                    <i class='far fa-user-circle'></i>
+                    <span>
+                        <a href="hosoadmin">Hồ Sơ Admin</a>
+                    </span>
+                </button>
+                <button type="button" class="btn">
+                    <i class='fab fa-bity'></i>
+                    <span>
+                        <a href="quanlynguoidung">Quản Lý Người Dùng</a>
+                    </span>
+                   
+                </button>
+                <button type="button" class="btn">
+                    <i class='fas fa-book'></i>
+                    <span>
+                        <a href="quanlysanpham">Quản Lý Sản Phẩm</a>
+                    </span>
+                   
+
+                </button>
+                <button type="button" class="btn">
+                    <i class="fa fa-file-text-o"></i>
+                    <a style="color: white;">Quản Lý Hóa Đơn</a>
+                </button>
+                <button type="button" class="btn">
+                    <i class='fas fa-atom'></i>
+                    <span>
+                        <a href="quanlyloaisanpham">Phân Loại Sản Phẩm</a>
+                    </span>
+                </button>
+                <button type="button" class="btn">
+                    <i class='fas fa-map-marker-alt'></i>
+                    <a style="color: white;">Liên Hệ</a>
+                </button>
+                <button type="button" class="btn">
+                    <i class="material-icons">notifications_none</i>
+                    <a style="color: white;">NOTIFICATIONS</a>
+                </button>
+                <button type="button" class="btn" style="margin-top: 50px;height: 50px;width: 300px;">
+                    <i class="material-icons" style="font-size:26px;color: white;">cloud</i>
+                    <a style="color: white;">UPGRADETO PRO</a>
+                </button>
+            </div>
+            <div class="col-sm-9 border">
+                <div class="row broder" style="width: 100%;height: 500px;margin-left: 20px;margin-top: 10px;">
+                    <div class="col-sm-8 border">
+                        <div class="row">
+                            <a style="font-size: 25px;font-weight: lighter;margin-left: 20px;margin-top: 10px;">
+                                HỒ SƠ</a>
+                        </div>
+                        <div class="row">
+                            <form action="/hosoadmin" method="POST" style="margin: 20px 10px;float: left;width: 300px;">
+                                <div class="form-group">
+                                    <label for="email">
+                                        <a style="font-size: 20px;">Vị Trí</a>
+                                    </label>
+                                    <div class="alert alert-dark">
+                                        Admin của Website
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <form action="/action_page.php" style="margin: 20px 10px;float: left;width: 300px;">
+                                <div class="form-group">
+                                    <label for="email">
+                                        <a style="font-size: 20px;">Họ Và Tên</a>
+                                    </label>
+                                    <div class="alert alert-dark">
+                                        Nguyễn Ngọc Tuyên
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <form action="/action_page.php" style="margin: 20px 10px;float: left;width: 300px;">
+                                <div class="form-group">
+                                    <label for="email">
+                                        <a style="font-size: 20px;">Email</a>
+                                    </label>
+                                    <div class="alert alert-dark">
+                                        nguyenngoctuyen188@gmail.com
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <form action="/action_page.php" style="margin: 20px 10px;float: left;width: 300px;">
+                                <div class="form-group">
+                                    <label for="email">
+                                        <a style="font-size: 20px;">Số Điện Thoại</a>
+                                    </label>
+                                    <div class="alert alert-dark">
+                                        0969734928
+                                    </div>
+                                </div>
+                            </form>
+                            <dialog id="hopthoai">
+                                <div>
+                                    <form action="/action_page.php">
+                                        <div class="form-group">
+                                            <label for="user">User:</label>
+                                            <input type="user" class="form-control" id="user_update" placeholder="User" name="user">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email:</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sdt">Số Điện Thoại:</label>
+                                            <input type="sdt" class="form-control" id="sdt" placeholder="Enter Số Điện Thoại" name="sdt">
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <label class="form-check-label">
+                                            </label>
+                                        </div>
+                                        <button type="button" class="btn btn-primary">Cập Nhập</button>
+                                        <button type="button" class="btn btn-primary" onclick="back()">Trở Về</button>
+                                    </form>
+                                </div>
+                            </dialog>
+
+                            <dialog id="remakemk">
+                                <div>
+                                    <form action="/action_page.php">
+                                        <div class="form-group">
+                                            <label for="email">Email:</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Xác Nhận Email" name="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Mật Khẩu Hiện tại:</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Xác nhận Mật Khẩu" name="pws">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Nhập Mật Khẩu Mới:</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Mật Khẩu Mới" name="pws">
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <label class="form-check-label">
+                                            </label>
+                                        </div>
+                                        <button type="button" class="btn btn-primary">Cập Nhập</button>
+                                        <button type="button" class="btn btn-primary" onclick="backmk()">Trở Về</button>
+                                    </form>
+                                </div>
+                            </dialog>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4 border">
+                        <div class="row">
+                            <img src="../public/asset/image/background.png" style="width: 361px;height: 150px;">
+                        </div>
+                        <div class="row" style="height: 300px;">
+                            <div class="infor" style="margin-top: 80px;">
+                                <a>Nguyễn Ngọc Tuyên</a>
+                                <button onclick="myFunction()" type="button" class="btn btn-outline-danger">Thay Đổi
+                                    Thông Tin</button>
+                                <button onclick="showdialog()" type="button" class="btn btn-outline-danger">Đổi Mật
+                                    Khẩu</button>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="icon" style="margin-left: 50px;margin-top: 50px;">
+                            <i class="fa fa-facebook" style="font-size:24px"></i>
+                            <i class="fa fa-twitter" style="font-size:24px"></i>
+                            <i class="fa fa-google-plus" style="font-size:24px"></i>
+                        </div>
+                        <img src="../public/asset/image/images.png" class="rounded-circle" alt="Cinque Terre" style="width: 100px;height: 100px;z-index: 10;margin-top: -800px;margin-left: 120px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("hopthoai");
+        x.open = true;
+        // if (x.open == true) {
+        //     x.open = false;
+        // } else {
+        //     x.open = true;
+        // }
+    }
+</script>
+<script>
+    function back() {
+        var x = document.getElementById("hopthoai");
+
+        if (x.open == true) {
+            x.open = false
+        }
+    }
+</script>
+<script>
+    function showdialog() {
+        var x = document.getElementById("remakemk");
+        x.open = true;
+    }
+</script>
+<script>
+    function backmk() {
+        var x = document.getElementById("remakemk");
+
+        if (x.open == true) {
+            x.open = false
+        }
+    }
+</script>

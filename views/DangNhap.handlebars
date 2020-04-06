@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link Boostrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- link CSS -->
+    <link rel="stylesheet" href="../public/css/DangNhap.css">
+    <!-- link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 border">
+                <div class="text-login">
+                    Đăng Nhập
+                </div>
+                <div class="form-login">
+                    <div class="login">
+                        <form action="/dangnhap" method="POST">
+                            <div class="form-group">
+                                <label style="color: white;" for="email">Email address:</label>
+                                <input style="background-color: rgba(0, 0, 0, 0.1);" type="email" class="form-control" placeholder="Enter email" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label style="color: white;" for="pwd">Password:</label>
+                                <input style="background-color: rgba(0, 0, 0, 0.1);color: thistle;" type="password" class="form-control" placeholder="Enter password" id="password" name="password">
+                            </div>
+                            <div class="form-group form-check">
+                                <div>
+                                    <label class="form-check-label" style="float: left;">
+                                        <input class="form-check-input" type="checkbox">
+                                        <a style="color: white">Remember me</a> 
+                                      </label>
+                                    <a style="float: left;padding: 2px;margin-left: 100px;" href="#">Forgot Password ?</a>
+                                </div>
+                            </div>
+                            <button type="submit" class="button" style="vertical-align:middle">
+                                <span>
+                                    <a>Đăng Nhập</a>       
+                                </span>
+                            </button>
+                        </form>
+                        <div class="hr-">
+                            <hr>
+                            <h>or</h>
+                        </div>
+                        <div class="btn-group">
+                            <button class="button"><i class="fa fa-facebook-square" style="font-size:24px;color:blue;margin:10px 10px 100px;float: left;"></i><h1>Login With Facebook</h1>  </button>
+                            <button class="button"><i class="fa fa-google-plus-square" style="font-size:24px;color:red;margin:10px 10px 100px;float: left;"></i><h1>Login With Google</h1></button>
+                        </div>
+                        <div class="DangKi">
+                            <h1 class="h1">
+                                If you do not have an account, please register here?
+                            </h1>
+                            <a style="cursor: pointer;" href="dangki">Click here</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-6 border">
+                <div class="footer">
+                    Xin Chào Đến Với <br> Brcze5
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- link CSS -->
+    <link rel="stylesheet" href="../public/css/QuanLyLoaiSanPham.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     {{!-- data tables --}}
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+    {{!-- <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" /> --}}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    {{!-- <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script> --}}
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row" style="background:#9932CC;opacity: 0.7">
+                    <a style="margin-left: 100px;font-size: 30px;color: white;">BRCZE5</a>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <a style="font-size: 20px;color: black;float: left;margin-top: 10px;margin-right: 50px;">Quản Lý Sản
+                    Phẩm</a>
+
+                <form method="POST" class="form-inline" action="/quanlysanpham" style="margin-top: 5px;float: left;">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class='far fa-eye' style='font-size:24px;color: black;'></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Tìm Kiếm">
+                    </div>
+                </form>
+                <a style="float: left;margin-left: 200px;margin-top: 10px;">Tài Khoản</a>
+
+                <a style="float: left;margin-top: 10px;margin-left: 30px;">Đăng Xuất</a>
+            </div>
+        </div>
+        <div class="row" style="height: 680px;">
+            <div class="col-sm-3 border" style="background:#9932CC;opacity: 0.7;">
+                <button type="button" class="btn">
+                    <i class='far fa-user-circle'></i>
+                    <span>
+                        <a href="hosoadmin"> Hồ Sơ Admin</a>
+                    </span>
+
+                </button>
+                <button type="button" class="btn">
+                    <i class='fab fa-bity'></i>
+                    <span>
+                        <a href="quanlynguoidung">Quản Lý Người Dùng</a>
+                    </span>
+                </button>
+                <button type="button" class="btn">
+                    <i class='fas fa-book'></i>
+                    <span>
+                        <a href="quanlysanpham">Quản Lý Sản Phẩm</a>
+                    </span>
+                </button>
+                <button type="button" class="btn">
+                    <i class="fa fa-file-text-o"></i>
+                    <a style="color: white;">Quản Lý Hóa Đơn</a>
+                </button>
+                <button type="button" class="btn">
+                    <i class='fas fa-atom'></i>
+                    <span>
+                        <a href="quanlyloaisanpham">Phân Loại Sản Phẩm</a>
+                    </span>
+                </button>
+                <button type="button" class="btn">
+                    <i class='fas fa-map-marker-alt'></i>
+                    <a style="color: white;">Liên Hệ</a>
+                </button>
+                <button type="button" class="btn">
+                    <i class="material-icons">notifications_none</i>
+                    <a style="color: white;">NOTIFICATIONS</a>
+                </button>
+                <button type="button" class="btn" style="margin-top: 50px;height: 50px;width: 300px;">
+                    <i class="material-icons" style="font-size:26px;color: white;">cloud</i>
+                    <a style="color: white;">UPGRADETO PRO</a>
+                </button>
+            </div>
+            <div class="col-sm-9 border">
+                <table id="example" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Mã Loại Sản Phẩm</th>
+                            <th>Image</th>
+                            <th>Tên Loaị Sản Phẩm</th>
+                            <th>Điều Hướng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                         
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                          
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                          
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2012/03/29</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                          
+                            <td>Tokyo</td>
+                            <td>33</td>
+                            <td>2008/11/28</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                      
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2012/12/02</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                    
+                            <td>San Francisco</td>
+                            <td>59</td>
+                            <td>2012/08/06</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                     
+                            <td>Tokyo</td>
+                            <td>55</td>
+                            <td>2010/10/14</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                       
+                            <td>San Francisco</td>
+                            <td>39</td>
+                            <td>2009/09/15</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                         
+                            <td>Edinburgh</td>
+                            <td>23</td>
+                            <td>2008/12/13</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                         
+                            <td>London</td>
+                            <td>30</td>
+                            <td>2008/12/19</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                         
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2013/03/03</td>
+                            <td>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
+                                </button>
+                                <button type="button"
+                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+
+                             <th>Mã Loại Sản Phẩm</th>
+                            <th>Image</th>
+                            <th>Tên Loaị Sản Phẩm</th>
+                            <th>Điều Hướng</th>
+                        </tr>
+                    </tfoot>
+                </table>    
+                <button class="kc_fab_main_btn" onclick="dialog_Add_LoaiSp()">+</button>
+                <dialog id="hopthoai" style="margin-top: -150px;margin-left: 280px;">
+                    <div>
+                        <form action="/action_page.php">
+                            <a style="text-align: center;font-size: 50px;color: black;">Thêm Sản Phẩm</a>
+                            <div class="form-group">
+                                <label>Nhập Mã Loại Sản Phẩm:</label>
+                                <input type="text" class="form-control" placeholder="Mã Loại Sản Phẩm">
+                            </div>
+                            <div class="form-group">
+                                <label>Nhập Tên Loại Sản Phẩm:</label>
+                                <input type="text" class="form-control" placeholder="Tên Loại Sản Phẩm">
+                            </div>
+                            <div class=" form-group ">
+                                <label>Image:</label>
+                                <input type="file" class="form-control-file border">
+                            </div>
+                            <button type="button " class="btn btn-primary ">Thêm</button>
+                            <button type="button " class="btn btn-primary " onclick="dismiss()">Hủy</button>
+                        </form>
+                    </div>
+                </dialog>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var x = document.getElementById("hopthoai");
+
+    function dialog_Add_LoaiSp() {
+        x.open = true;
+    };
+
+    function dismiss() {
+        if (x.open == true) {
+            x.open = false;
+        }
+    };
+</script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>

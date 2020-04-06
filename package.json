@@ -1,0 +1,21 @@
+{
+    "name": "assinigment",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Tuyennn",
+    "license": "ISC",
+    "dependencies": {
+        "@material/fab": "^5.1.0",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^4.0.2",
+        "mongodb": "^3.5.5",
+        "mongoose": "^5.9.7",
+        "nodemon": "^2.0.2"
+    }
+}
