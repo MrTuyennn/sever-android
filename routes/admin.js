@@ -21,18 +21,5 @@ router.get('/hosoadmin', function(req, res) {
     res.render('HoSoAdmin');
 });
 
-// màn hình quản lý người dùng
-router.get('/quanlynguoidung', function(req, res) {
-    res.render('QuanLyNguoiDung');
-});
 
-// màn hình quản lý sản phẩm
-router.get('/quanlysanpham', function(req, res) {
-    res.render('QuanLySanPham');
-});
-
-// màn hình quản lý Loại Sản Phẩm
-router.get('/quanlyloaisanpham', function(req, res) {
-    res.render('QuanLyLoaiSanPham');
-});
 module.exports = router;

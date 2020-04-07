@@ -1,0 +1,79 @@
+* {
+    margin: 0px;
+    padding: 0;
+}
+
+.btn {
+    position: relative;
+    float: left;
+    height: 50px;
+    width: 300px;
+    margin: 5px;
+}
+
+.btn i {
+    font-size: 26px;
+    color: white;
+    margin-left: 70px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.btn a {
+    color: white;
+    float: left;
+    margin: 5px;
+}
+
+.btn:hover::before {
+    position: absolute;
+    content: "";
+    margin-left: -130px;
+    margin-top: -10px;
+    height: 50px;
+    width: 300px;
+    z-index: 2;
+    background: white;
+    opacity: 0.1;
+}
+
+.infor {
+    width: 200px;
+    height: 50px;
+    margin-left: 80px;
+}
+
+.infor a {
+    text-align: center;
+    margin-left: 30px;
+}
+
+.infor .btn-outline-danger {
+    width: 200px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.icon i {
+    float: left;
+    margin-left: 50px;
+}
+
+dialog {
+    position: absolute;
+    float: left;
+    left: 0px;
+    right: 0px;
+    margin-top: -370px;
+    margin-left: 320px;
+    width: -webkit-fit-content;
+    height: -webkit-fit-content;
+    color: black;
+    border-width: initial;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    padding: 1em;
+    background: white;
+}
