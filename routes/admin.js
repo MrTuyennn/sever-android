@@ -7,10 +7,10 @@ router.use(bodyParser.json());
 
 // lấy giữ liệu từ form
 // màn hình login
-router.get('/dangnhap', function(req, res) {
+router.get('/', function(req, res) {
     res.render('DangNhap');
 });
-router.post('/dangnhap', adminCOntroller.login);
+router.post('/', adminCOntroller.login);
 // màn hình đăng kí
 router.get('/dangki', function(req, res) {
     res.render('DangKi');

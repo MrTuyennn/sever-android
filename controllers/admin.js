@@ -33,7 +33,7 @@ exports.register = function(req, res) {
                 console.log(err);
                 return
             } else {
-                res.redirect('/dangnhap');
+                res.redirect('/');
                 console.log(username, password, email, phone);
             }
         });
