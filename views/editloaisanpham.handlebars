@@ -33,7 +33,8 @@
                 </div>
             </div>
             <div class="col-sm-9">
-                <a style="font-size: 20px;color: black;float: left;margin-top: 10px;margin-right: 50px;">Quản Lý Hóa Đơn</a>
+                <a style="font-size: 20px;color: black;float: left;margin-top: 10px;margin-right: 50px;">Quản Lý Hóa
+                    Đơn</a>
 
 
                 <a style="float: left;margin-left: 200px;margin-top: 10px;">Tài Khoản</a>
@@ -45,15 +46,22 @@
             <div class="col-sm-3 border" style="background:#9932CC;opacity: 0.7;">
                 <button type="button" class="btn">
                     <i class='far fa-user-circle'></i>
-                    <a style="color: white;"> Hồ Sơ Admin</a>
+                    <span>
+                        <a href="hosoadmin"> Hồ Sơ Admin</a>
+                    </span>
+
                 </button>
                 <button type="button" class="btn">
                     <i class='fab fa-bity'></i>
-                    <a style="color: white;">Quản Lý Người Dùng</a>
+                    <span>
+                        <a href="quanlynguoidung">Quản Lý Người Dùng</a>
+                    </span>
                 </button>
                 <button type="button" class="btn">
                     <i class='fas fa-book'></i>
-                    <a style="color: white;">Quản Lý Sản Phẩm</a>
+                    <span>
+                        <a href="quanlysanpham">Quản Lý Sản Phẩm</a>
+                    </span>
                 </button>
                 <button type="button" class="btn">
                     <i class="fa fa-file-text-o"></i>
@@ -61,7 +69,9 @@
                 </button>
                 <button type="button" class="btn">
                     <i class='fas fa-atom'></i>
-                    <a style="color: white;">Quản Lý Loại Sản Phẩm</a>
+                    <span>
+                        <a href="quanlyloaisanpham">Phân Loại Sản Phẩm</a>
+                    </span>
                 </button>
                 <button type="button" class="btn">
                     <i class='fas fa-map-marker-alt'></i>
@@ -76,7 +86,29 @@
                     <a style="color: white;">UPGRADETO PRO</a>
                 </button>
             </div>
-            <div class="col-sm-9 border"></div>
+            <div class="col-sm-9 border">
+              
+                    <form action="/editloaisanpham" method="POST" autocomplete="off">
+                     <div class="col-sm-6">
+                         <input type="hidden" name="_id" value="{{loaisanpham._id}}">
+                    <div class="form-group">
+                        <label>Mã Loại Sản Phẩm:</label>
+                        <input  class="form-control"  id="MaLoaiSP" name="MaLoaiSP" value="{{loaisanpham.MaLoaiSP}}">
+                    </div>
+                    <div class="form-group">
+                        <label>Tên Loại Sản Phẩm:</label>
+                        <input class="form-control"  id="TenLoaiSP" name="TenLoaiSP" value="{{loaisanpham.TenLoaiSP}}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                     </div>
+                     {{!-- <div class="col-sm-6">
+                      <img name="image" src="http://localhost:3000/{{image}}"></img>
+                    </div> --}}
+                    
+                </form>
+               </div>
+               
+            </div>
         </div>
     </div>
     </div>

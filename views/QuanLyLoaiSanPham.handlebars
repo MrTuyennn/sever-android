@@ -117,7 +117,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{# each loasanphamlist}}
+                        {{# each Loasanphamlist}}
                         <tr>
                             <td>
                                 <p class="data">{{MaLoaiSP}}</p>
@@ -130,8 +130,10 @@
                                 <p class="data">{{TenLoaiSP}}</p>
                             </td>
                             <td>
-                                <a class="btn_edit" href="">Edit</a>
-                                <a class="btn_upload" href="">Upload</a>
+                                <a href="/editloaisanpham/{{_id}}" class="btn_edit" href="">Edit</a>
+                               <a href="/delete/{{_id}}" class="btnDelete"
+                                            onclick="return confirm('Are you sure to delete this song?')">Delete</a>
+
                             </td>
                         </tr>
                         {{/each}}

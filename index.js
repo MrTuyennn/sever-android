@@ -28,6 +28,14 @@ connectDB();
 // cấu hình express-handlebars
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+// màn hình quản lý người dùng
+// app.get('/quanlynguoidung', function(req, res) {
+//     res.render('QuanLyNguoiDung');
+// });
 
+// // màn hình quản lý sản phẩm
+// app.get('/quanlysanpham', function(req, res) {
+//     res.render('QuanLySanPham');
+// });
 // localhost 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
