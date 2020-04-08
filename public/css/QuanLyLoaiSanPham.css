@@ -82,3 +82,8 @@ dialog {
     float: right;
     margin-top: 00px;
 }
+
+.form_add label {
+    padding: 20px;
+    width: 200px;
+}

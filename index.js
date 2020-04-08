@@ -1,7 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-// const multer = require('multer');
+
 const app = express();
 
 // khai báo từ admin
