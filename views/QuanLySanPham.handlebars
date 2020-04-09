@@ -47,7 +47,7 @@
             <div class="col-sm-9">
                 <a style="font-size: 20px;color: black;float: left;margin-top: 10px;margin-right: 50px;">Quản Lý Sản
                     Phẩm</a>
-                    <form method="POST" class="form-inline" action="/quanlysanpham" style="margin-top: 5px;float: left;">
+                <form method="POST" class="form-inline" action="/quanlysanpham" style="margin-top: 5px;float: left;">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">
@@ -106,6 +106,65 @@
                 </button>
             </div>
             <div class="col-sm-9 border">
+                {{!-- model --}}
+                <!-- Button trigger modal -->
+
+                     {{!-- m --}}
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Thêm Sản Phẩm</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            {{!--Form thêm sản phẩm  --}}
+                            <form>
+                                <div class="form-group" action="/uploadsanpham" method="post">
+                                    <label>Mã Sản Phẩm</label>
+                                    <input type="email" class="form-control" id="MaSP" name="MaSP">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Chọn Loại Sản Phẩm</label>
+                                    <select class="form-control" id="LoaiSP" name="TenLoaiSP">
+                                        {{#each loaisanpham}}
+                                        <option value="{{TenLoaiSP}}">{{TenLoaiSP}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên Sản Phẩm</label>
+                                    <input type="email" class="form-control" id="TenSP" name="TenSP">
+                                </div>
+                                <div class=" form-group">
+                                    <label>Giá Sản Phẩm</label>
+                                    <input type="email" class="form-control" id="GiaSP" name="GiaSP">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Mô Tả Sản Phẩm</label>
+                                    <textarea class="form-control" id="MotaSP" name="MotaSP" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Chọn hình ảnh sản phẩm</label>
+                                    <input type="file" class="form-control-file" id="imageSP" name="imageSP">
+                                </div>
+                            </form>
+                            {{!-- Form thêm sản phẩm --}}
+
+                            <div class="modal-footer">
+                                <button style="float: left;width: 100px;height:50px" type="button"
+                                    class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                                <button style="float: left;" type="button" class="btn btn-primary">Thêm Sản
+                                    Phẩm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{!-- model --}}
+
                 <table id="example" class="display" style="width:100%">
                     <thead>
                         <tr>
@@ -119,26 +178,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                              <th>Mô tả</th>
-                            <td>
-                                <button type="button"
-                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
-                                    <i class='fas fa-trash-alt' style='font-size:18px;color:red'></i>
-                                </button>
-                                <button type="button"
-                                    style="height: 30px;width: 50px;margin-top: -10px ;background-color: #4CAF50; border: 2px ;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
-                                    <i class='fas fa-wrench' style='font-size:18px;color:cyan'></i>
-                                </button>
-                            </td>
 
-                        </tr>
-                        
+
 
                     </tbody>
                     <tfoot>
@@ -149,15 +190,20 @@
                             <th>Office</th>
                             <th>Age</th>
                             <th>Start date</th>
-                              <th>Mô tả</th>
+                            <th>Mô tả</th>
                             <th>Salary</th>
                         </tr>
                     </tfoot>
                 </table>
 
-                <button class="kc_fab_main_btn">+</button>
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter"
+                    class="kc_fab_main_btn">+</button>
             </div>
+            {{!-- modal --}}
 
+
+
+            {{!-- modaol --}}
 
         </div>
     </div>

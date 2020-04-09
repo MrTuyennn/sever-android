@@ -8,6 +8,8 @@ const app = express();
 const adminRoute = require('./routes/admin');
 // khai báo từ routes/loaisanpham
 const loaisanpham = require('./routes/loaisanpham');
+// khai báo từ routes/sanpham
+const sanpham = require('./routes/sanpham');
 
 const port = 3000;
 
@@ -19,6 +21,7 @@ app.use("/public", express.static("public"));
 app.use(express.static('uploads'));
 app.use(adminRoute);
 app.use(loaisanpham);
+app.use(sanpham);
 
 // kết nối với MongoDB
 const connectDB = require("./config/database");
@@ -33,9 +36,6 @@ app.get('/quanlynguoidung', function(req, res) {
     res.render('QuanLyNguoiDung');
 });
 
-// // màn hình quản lý sản phẩm
-app.get('/quanlysanpham', function(req, res) {
-    res.render('QuanLySanPham');
-});
+
 // localhost 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

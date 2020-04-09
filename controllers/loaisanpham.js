@@ -1,6 +1,6 @@
 const Loaisanpham = require('../models/loaisanpham');
 
-
+// đỗ dữ liệu
 exports.getAll = function(req, res) {
     Loaisanpham.find({})
         .lean()
@@ -12,6 +12,8 @@ exports.getAll = function(req, res) {
             }
         });
 };
+
+// lấy giữ liệu
 exports.getloaisanpham = function(request, response) {
     Loaisanpham.findById(request.params.id)
         .lean()
@@ -22,7 +24,7 @@ exports.getloaisanpham = function(request, response) {
         });
 };
 
-
+// chỉnh sửa 
 exports.edit = function(req, res) {
     Loaisanpham.updateOne({ _id: req.body._id }, { $set: { MaLoaiSP: req.body.MaLoaiSP, TenLoaiSP: req.body.TenLoaiSP } },
         (err, doc) => {
@@ -44,4 +46,13 @@ exports.delete = function(request, response) {
             console.log(err);
         }
     });
+};
+
+// lấy loại sản phẩm
+exports.getdata = function(req, res) {
+    Loaisanpham.find({})
+        .lean()
+        .exec(function(err, data) {
+            res.render('QuanLySanPham', { loaisanpham: data });
+        });
 };
