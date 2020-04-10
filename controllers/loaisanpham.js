@@ -26,7 +26,7 @@ exports.getloaisanpham = function(request, response) {
 
 // chỉnh sửa 
 exports.edit = function(req, res) {
-    Loaisanpham.updateOne({ _id: req.body._id }, { $set: { MaLoaiSP: req.body.MaLoaiSP, TenLoaiSP: req.body.TenLoaiSP } },
+    Loaisanpham.updateOne({ _id: req.body._id }, { $set: { TenLoaiSP: req.body.TenLoaiSP } },
         (err, doc) => {
             if (!err) {
                 res.redirect('/quanlyloaisanpham');

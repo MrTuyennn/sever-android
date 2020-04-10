@@ -27,7 +27,6 @@ const upload = multer({ storage: storage });
 
 router.post('/upload', upload.single('image'), (request, response) => {
     let loaisanpham = new Loaisanpham({
-        MaLoaiSP: request.body.MaloaiSP,
         TenLoaiSP: request.body.TenloaiSP,
         image: request.file.originalname,
     });
