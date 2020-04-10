@@ -1,18 +1,25 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
-
 const multer = require('multer');
+const sanphamcontroller = require('../controllers/sanpham');
+//import model 
+const sanpham = require('../models/sanpham');
+const loaisanpham = require('../controllers/loaisanpham');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
-//import model 
-const Sanpham = require('../models/sanpham');
 // lấy giữ liệu
-const loaisanpham = require('../controllers/loaisanpham');
-router.get('/quanlysanpham', function(req, res) {
-    loaisanpham.getdata(req, res);
-});
 
+// router.get('/quanlysanpham', loaisanpham.getdata);
+
+// router.get('/quanlysanpham', function(req, res) {
+//     sanphamcontroller.getAll(req, res);
+// });
+router.get('/quanlysanpham', loaisanpham.getdata);
+// lấy giữ liệu controller
+
+
+// router.get('/quanlysanpham', sanphamcontroller.getAll);
 // cấu hình multer
 var storage = multer.diskStorage({
     description: function(req, file, cb) {
@@ -21,11 +28,11 @@ var storage = multer.diskStorage({
     filename: function(req, file, cb) {
         cb(null, file.originalname);
     }
-});
+})
 const upload = multer({ storage: storage });
 
 router.post('/uploadsanpham', upload.single('imageSP'), (request, response) => {
-    let sanpham = new Sanpham({
+    let newsanpham = new sanpham({
         MaSP: request.body.MaSP,
         TenLoaiSP: request.body.TenLoaiSP,
         TenSP: request.body.TenSP,
@@ -33,14 +40,16 @@ router.post('/uploadsanpham', upload.single('imageSP'), (request, response) => {
         MotaSp: request.body.MotaSp,
         imageSP: request.file.originalname,
     });
-    sanpham.save(function(err) {
+    newsanpham.save(function(err) {
         if (err) {
             console.log(err);
             return;
         } else {
             response.redirect('/quanlysanpham');
-            console.log(request.file.filename);
+            console.log(newsanpham);
         }
     });
 });
 module.exports = router;
+
+//ê sao mà ns dc ta nghe m nghe t ns k nghe

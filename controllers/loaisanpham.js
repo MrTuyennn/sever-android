@@ -1,5 +1,6 @@
 const Loaisanpham = require('../models/loaisanpham');
 
+
 // đỗ dữ liệu
 exports.getAll = function(req, res) {
     Loaisanpham.find({})
@@ -11,6 +12,7 @@ exports.getAll = function(req, res) {
                 log(err);
             }
         });
+
 };
 
 // lấy giữ liệu
