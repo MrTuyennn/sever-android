@@ -37,7 +37,7 @@ router.post('/uploadsanpham', upload.single('imageSP'), (request, response) => {
         TenLoaiSP: request.body.TenLoaiSP,
         TenSP: request.body.TenSP,
         GiaSP: request.body.GiaSP,
-        MotaSp: request.body.MotaSp,
+        MotaSp: request.body.MotaSP,
         imageSP: request.file.originalname,
     });
     newsanpham.save(function(err) {
