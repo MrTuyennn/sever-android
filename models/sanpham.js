@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const sanphamSchema = new Schema({
-    TenLoaiSP: { type: String, },
+    TenLoaiSP: { type: Schema.Types.ObjectId, ref: "loaisanpham" },
     TenSP: { type: String, },
     MaSP: { type: String, },
     GiaSP: { type: Number, },
-    MotaSp: { type: String, },
+    MotaSP: { type: String, },
     imageSP: { type: String, },
 });
 const sanpham = mongoose.model('sanpham', sanphamSchema);

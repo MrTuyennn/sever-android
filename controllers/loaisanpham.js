@@ -49,12 +49,3 @@ exports.delete = function(request, response) {
         }
     });
 };
-
-// lấy loại sản phẩm
-exports.getdata = function(req, res) {
-    Loaisanpham.find({})
-        .lean()
-        .exec(function(err, data) {
-            res.render('QuanLySanPham', { loaisanpham: data });
-        });
-};

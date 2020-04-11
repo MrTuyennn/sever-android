@@ -1,18 +1,18 @@
 const Sanpham = require('../models/sanpham');
-
+const Loaisanpham = require('../models/loaisanpham');
 // Đỗ dữ liệu
-exports.getAll = function(req, res) {
-    Sanpham.find({})
-        .lean()
-        .exec(function(err, data) {
-            res.render('QuanLySanPham', { sanphamlist: data });
-            console.log(data);
-            if (err) {
-                log(err);
-            }
-        });
+
+exports.getAll = async(req, res) => {
+    let loaisanpham = await Loaisanpham.find().lean();
+    let sanpham = await Sanpham.find()
+        .populate({ path: "TenLoaiSP", select: "TenLoaiSP" })
+        .lean();
+    /* let newData = buy.map((item, index) => ({
+        ...item,
+      }));*/
+    res.render("QuanLySanPham", {
+        listsanpham: sanpham,
+        loaisanpham: loaisanpham,
+
+    });
 };
-
-
-
-//hàm thêm đâu

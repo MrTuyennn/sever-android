@@ -131,7 +131,7 @@
                                     <label for="exampleFormControlSelect1">Chọn Loại Sản Phẩm</label>
                                     <select class="form-control" id="LoaiSP" name="TenLoaiSP">
                                         {{#each loaisanpham}}
-                                        <option value="{{TenLoaiSP}}">{{TenLoaiSP}}</option>
+                                        <option value="{{_id}}">{{TenLoaiSP}}</option>
                                         {{/each}}
                                     </select>
                                 </div>
@@ -179,13 +179,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{# each sanphamlist}}
+                        {{# each listsanpham}}
                         <tr>
                             <td>
-                                <p class="data">{{TenLoaiSP}}</p>
+                                <p class="data">{{TenLoaiSP.TenLoaiSP}}</p>
                             </td>
                               <td style="text-align: center;">
-                                <image src="http://localhost:3000/{{imageSP}}" style="height=50px;width: 50px"></image>
+                                <image src="http://localhost:3000/{{imageSP}}" style="height=50px;width: 50px">
                             </td>
                             <td>
                                 <p class="data">{{MaSP}}</p>
@@ -208,11 +208,11 @@
                     <tfoot>
                         <tr>
 
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
+                            <th>Loại Sản Phẩm</th>
+                            <th>Image</th>
+                            <th>Mã Sản Phẩm</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Giá</th>
                             <th>Mô tả</th>
                             
                         </tr>

@@ -2,27 +2,23 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const multer = require('multer');
+
 const sanphamcontroller = require('../controllers/sanpham');
 //import model 
 const sanpham = require('../models/sanpham');
-const loaisanpham = require('../controllers/loaisanpham');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 // lấy giữ liệu
 
-// router.get('/quanlysanpham', loaisanpham.getdata);
-
-// router.get('/quanlysanpham', function(req, res) {
-//     sanphamcontroller.getAll(req, res);
-// });
-router.get('/quanlysanpham', loaisanpham.getdata);
-// lấy giữ liệu controller
 
 
-// router.get('/quanlysanpham', sanphamcontroller.getAll);
+router.get('/quanlysanpham', function(req, res) {
+    sanphamcontroller.getAll(req, res);
+});
+
 // cấu hình multer
 var storage = multer.diskStorage({
-    description: function(req, file, cb) {
+    destination: function(req, file, cb) {
         cb(null, './uploads');
     },
     filename: function(req, file, cb) {
@@ -37,7 +33,7 @@ router.post('/uploadsanpham', upload.single('imageSP'), (request, response) => {
         TenLoaiSP: request.body.TenLoaiSP,
         TenSP: request.body.TenSP,
         GiaSP: request.body.GiaSP,
-        MotaSp: request.body.MotaSP,
+        MotaSP: request.body.MotaSP,
         imageSP: request.file.originalname,
     });
     newsanpham.save(function(err) {
@@ -50,6 +46,5 @@ router.post('/uploadsanpham', upload.single('imageSP'), (request, response) => {
         }
     });
 });
-module.exports = router;
 
-//ê sao mà ns dc ta nghe m nghe t ns k nghe
+module.exports = router;
