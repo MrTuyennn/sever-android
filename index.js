@@ -3,7 +3,8 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 
 const app = express();
-
+// khai báo Api
+const api = require('./routes/API');
 // khai báo từ admin
 const adminRoute = require('./routes/admin');
 // khai báo từ routes/loaisanpham
@@ -24,6 +25,7 @@ app.use(express.static('uploads'));
 app.use(adminRoute);
 app.use(loaisanpham);
 app.use(sanpham);
+app.use(api);
 
 // kết nối với MongoDB
 const connectDB = require("./config/database");
