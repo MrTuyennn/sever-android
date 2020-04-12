@@ -16,3 +16,24 @@ exports.getAll = async(req, res) => {
 
     });
 };
+// lấy giử liệu để edit 
+
+exports.getSanpham = function(req, res) {
+    Sanpham.findById(req.params.id)
+        .lean()
+        .exec((err, doc) => {
+            if (!err) {
+                res.render('editsanpham', { sanpham: doc });
+            }
+        });
+};
+// xóa sản phẩm
+exports.deletesanpham = function(request, response) {
+    Sanpham.deleteOne({ _id: request.params.id }, (err, doc) => {
+        if (!err) {
+            response.redirect('/quanlysanpham');
+        } else {
+            console.log(err);
+        }
+    });
+};

@@ -47,4 +47,7 @@ router.post('/uploadsanpham', upload.single('imageSP'), (request, response) => {
     });
 });
 
+router.get('/editsanpham/:id', sanphamcontroller.getSanpham);
+
+router.get('/deletesanpham/:id', sanphamcontroller.deletesanpham);
 module.exports = router;

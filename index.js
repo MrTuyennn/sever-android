@@ -15,7 +15,9 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.get('/editsanpham', function(req, res) {
+    res.render('editsanpham');
+});
 //lấy các tài nguyên từ public
 app.use("/public", express.static("public"));
 app.use(express.static('uploads'));

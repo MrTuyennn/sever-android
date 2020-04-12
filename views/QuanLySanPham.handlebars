@@ -47,7 +47,7 @@
             <div class="col-sm-9">
                 <a style="font-size: 20px;color: black;float: left;margin-top: 10px;margin-right: 50px;">Quản Lý Sản
                     Phẩm</a>
-                <form  class="form-inline" action="/quanlysanpham" style="margin-top: 5px;float: left;">
+                <form class="form-inline" action="/quanlysanpham" style="margin-top: 5px;float: left;">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">
@@ -131,7 +131,7 @@
                                     <label for="exampleFormControlSelect1">Chọn Loại Sản Phẩm</label>
                                     <select class="form-control" id="LoaiSP" name="TenLoaiSP">
                                         {{#each loaisanpham}}
-                                        <option value="{{_id}}">{{TenLoaiSP}}</option>
+                                        <option value="{{TenLoaiSP.TenLoaiSP}}">{{TenLoaiSP}}</option>
                                         {{/each}}
                                     </select>
                                 </div>
@@ -156,11 +156,8 @@
                                         class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                                     <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
                                 </div>
-
                             </form>
                             {{!-- Form thêm sản phẩm --}}
-
-
                         </div>
                     </div>
                 </div>
@@ -175,7 +172,7 @@
                             <th>Tên Sản Phẩm</th>
                             <th>Giá</th>
                             <th>Mô tả</th>
-                           
+                            <th>Điều Hướng</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -184,8 +181,9 @@
                             <td>
                                 <p class="data">{{TenLoaiSP.TenLoaiSP}}</p>
                             </td>
-                              <td style="text-align: center;">
-                                <image src="http://localhost:3000/{{imageSP}}" style="height=50px;width: 50px">
+                            <td style="text-align: center;">
+                                <image src="http://localhost:3000/{{imageSP}}" class="data"
+                                    style="height=50px;width: 50px">
                             </td>
                             <td>
                                 <p class="data">{{MaSP}}</p>
@@ -195,9 +193,14 @@
                             </td>
                             <td>
                                 <p class="data">{{GiaSP}}</p>
-                                <td>
+                            </td>
+                            <td>
                                 <p class="data">{{MotaSP}}</p>
                             </td>
+                            <td>
+                                <a href="/editsanpham/{{_id}}" class="btn_edit" href="">Edit</a>
+                                <a href="/deletesanpham/{{_id}}" class="btnDelete"
+                                    onclick="return confirm('Are you sure to delete this song?')">Delete</a>
                             </td>
                         </tr>
 
@@ -214,7 +217,7 @@
                             <th>Tên Sản Phẩm</th>
                             <th>Giá</th>
                             <th>Mô tả</th>
-                            
+                            <th>Điều Hướng</th>
                         </tr>
                     </tfoot>
                 </table>
