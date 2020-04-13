@@ -27,6 +27,27 @@ exports.getSanpham = function(req, res) {
             }
         });
 };
+
+// chỉnh sửa 
+exports.editSanpham = function(req, res) {
+    Sanpham.updateOne({ _id: req.body._id }, {
+            $set: {
+                TenSP: req.body.TenSP,
+                MaSP: req.body.MaSP,
+                GiaSP: req.body.GiaSP,
+                MotaSP: req.body.MotaSP,
+                TenLoaiSP: req.body.TenLoaiSP,
+            }
+        },
+        (err, doc) => {
+            if (!err) {
+                res.redirect('/quanlysanpham');
+            } else {
+                console.log('Edit Failed');
+            }
+        }
+    );
+};
 // xóa sản phẩm
 exports.deletesanpham = function(request, response) {
     Sanpham.deleteOne({ _id: request.params.id }, (err, doc) => {

@@ -15,4 +15,8 @@ router.put('/api/loaisanpham/edit/:id', API.editloaisanpham);
 // delete 
 router.delete('/api/loaisanpham/delete/:id', API.deleteloaisanpham);
 
+
+
+// ====> sanpham
+router.get('/api/sanpham/', API.getAllsanpham);
 module.exports = router;

@@ -40,3 +40,49 @@ exports.deleteloaisanpham = async(req, res) => {
         console.log(error);
     }
 }
+
+
+
+// ======> api sanpham
+
+const Sanpham = require('../models/sanpham');
+
+exports.getAllsanpham = async(req, res) => {
+    try {
+        let sanpham = await Sanpham.find({});
+        res.render(sanpham);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+exports.getsanpham = async(req, res) => {
+    try {
+        let sanpham = await Sanpham.findById(req.params.id);
+        res.send(sanpham);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// edit 
+// exports.editsanpham = async(req, res) => {
+//     try {
+//         let sanpham = await Sanpham.findById(req.params.id);
+//         sanpham.set(req.body);
+//         let result = await sanpham.save();
+//         res.send(result);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+
+// xóa sản phẩm
+exports.deletesanpham = async(req, res) => {
+    try {
+        let result = await Sanpham.deleteOne({ _id: req.body.id });
+        res.send(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
