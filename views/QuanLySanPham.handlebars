@@ -106,6 +106,69 @@
                 </button>
             </div>
             <div class="col-sm-9 border">
+
+                <table id="example" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Loại Sản Phẩm</th>
+                            <th>Image</th>
+                            <th>Mã Sản Phẩm</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Giá</th>
+                            <th>Mô tả</th>
+                            <th>Điều Hướng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# each listsanpham}}
+                        <tr>
+                            <td>
+                                <p class="data">{{TenLoaiSP.TenLoaiSP}}</p>
+                            </td>
+                            <td style="text-align: center;">
+                                <image src="http://localhost:3000/{{imageSP}}" class="data"
+                                    style="height=50px;width: 50px">
+                            </td>
+                            <td>
+                                <p class="data code ">{{MaSP}}</p>
+                            </td>
+                            <td>
+                                <p class="data name">{{TenSP}}</p>
+                            </td>
+                            <td>
+                                <p class="data price">{{GiaSP}}</p>
+                            </td>
+                            <td>
+                                <p class="data des">{{MotaSP}}</p>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0);" data-pd_id="{{_id}}" data-pd_tl="{{TenLoaiSP.TenLoaiSP}}"
+                                    data-pd_code="{{MaSP}}" data-pd_name="{{TenSP}}" data-pd_price="{{GiaSP}}"
+                                    data-pd_des="{{MotaSP}}" class="edit" data-toggle="modal"
+                                    data-target="#myModal">Edit</a>
+                                <a href="/deletesanpham/{{_id}}" class="btnDelete"
+                                    onclick="return confirm('Are you sure to delete this song?')">Delete</a>
+                            </td>
+                        </tr>
+
+                        {{/each}}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+
+                            <th>Loại Sản Phẩm</th>
+                            <th>Image</th>
+                            <th>Mã Sản Phẩm</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Giá</th>
+                            <th>Mô tả</th>
+                            <th>Điều Hướng</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <button type="button" data-toggle="modal" data-target="#exampleModalCenter"
+                    class="kc_fab_main_btn">+</button>
                 {{!-- model --}}
                 <!-- Button trigger modal -->
 
@@ -131,7 +194,7 @@
                                     <label for="exampleFormControlSelect1">Chọn Loại Sản Phẩm</label>
                                     <select class="form-control" id="LoaiSP" name="TenLoaiSP">
                                         {{#each loaisanpham}}
-                                        <option value="{{TenLoaiSP.TenLoaiSP}}">{{TenLoaiSP}}</option>
+                                        <option value="{{_id}}">{{TenLoaiSP}}</option>
                                         {{/each}}
                                     </select>
                                 </div>
@@ -145,7 +208,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Mô Tả Sản Phẩm</label>
-                                    <input class="form-control" id="MotaSP" name="MotaSP" rows="3"></input>
+                                    <input class="form-control" id="MotaSP" name="MotaSP"></input>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Chọn hình ảnh sản phẩm</label>
@@ -162,75 +225,12 @@
                     </div>
                 </div>
                 {{!-- model --}}
-
-                <table id="example" class="display" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Loại Sản Phẩm</th>
-                            <th>Image</th>
-                            <th>Mã Sản Phẩm</th>
-                            <th>Tên Sản Phẩm</th>
-                            <th>Giá</th>
-                            <th>Mô tả</th>
-                            <th>Điều Hướng</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{# each listsanpham}}
-                        <tr>
-                            <td>
-                                <p class="data">{{TenLoaiSP.TenLoaiSP}}</p>
-                            </td>
-                            <td style="text-align: center;">
-                                <image src="http://localhost:3000/{{imageSP}}" class="data"
-                                    style="height=50px;width: 50px">
-                            </td>
-                            <td>
-                                <p class="data">{{MaSP}}</p>
-                            </td>
-                            <td>
-                                <p class="data">{{TenSP}}</p>
-                            </td>
-                            <td>
-                                <p class="data">{{GiaSP}}</p>
-                            </td>
-                            <td>
-                                <p class="data">{{MotaSP}}</p>
-                            </td>
-                            <td>
-                                <a href="/editsanpham/{{_id}}" class="btn_edit" href="">Edit</a>
-                                <a href="/deletesanpham/{{_id}}" class="btnDelete"
-                                    onclick="return confirm('Are you sure to delete this song?')">Delete</a>
-                            </td>
-                        </tr>
-
-                        {{/each}}
-
-
-                    </tbody>
-                    <tfoot>
-                        <tr>
-
-                            <th>Loại Sản Phẩm</th>
-                            <th>Image</th>
-                            <th>Mã Sản Phẩm</th>
-                            <th>Tên Sản Phẩm</th>
-                            <th>Giá</th>
-                            <th>Mô tả</th>
-                            <th>Điều Hướng</th>
-                        </tr>
-                    </tfoot>
-                </table>
-
-                <button type="button" data-toggle="modal" data-target="#exampleModalCenter"
-                    class="kc_fab_main_btn">+</button>
+                {{!-- modal edit sanpham --}}
+                <!-- Button to Open the Modal -->
+                <!-- The Modal -->
             </div>
             {{!-- modal --}}
-
-
-
             {{!-- modaol --}}
-
         </div>
     </div>
     </div>
@@ -239,11 +239,91 @@
     </div>
 
     </div>
+
+    <div class="modal" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="/editsanpham" method="POST" autocomplete="off">
+                        <input class="id" type="hidden" name="_id">
+                        <div class="form-group">
+                            <label>Mã Sản Phẩm</label>
+                            <input class="form-control code" id="MaSP" name="MaSP">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Chọn Loại Sản Phẩm</label>
+                            <select class="form-control" id="brandedt" name="TenLoaiSP">
+                                {{#each loaisanpham}}
+                                <option value="{{_id}}">{{TenLoaiSP}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tên Sản Phẩm</label>
+                            <input class="form-control name" name="TenSP">
+                        </div>
+                        <div class=" form-group">
+                            <label>Giá Sản Phẩm</label>
+                            <input class="form-control price" name="GiaSP">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Mô Tả Sản Phẩm</label>
+                            <input class="form-control des" name="MotaSP"></input>
+                        </div>
+                        {{!-- <div class="form-group">
+                                    <label for="exampleFormControlFile1">Chọn hình ảnh sản phẩm</label>
+                                    <input type="file" class="form-control-file" id="imageSP" name="imageSP">
+                                </div> --}}
+                        <div class="modal-footer">
+                            <button style="float: left;width: 100px;height:50px" type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Hủy</button>
+                            <button type="submit" class="btn btn-primary">Cập Nhập Sản Phẩm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- modal edit sanpham --}}
 </body>
 
 </html>
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
         $('#example').DataTable();
+
+        $('#example').on('click', '.edit', function () {
+
+
+            var id = $(this).data('pd_id');
+            var tenloaisanpham = $(this).data('pd_tl');
+            var masanpham = $(this).data('pd_code');
+            var tensanpham = $(this).data('pd_name');
+            var giasanpham = $(this).data('pd_price');
+            var motasanpham = $(this).data('pd_des');
+
+           alert("data" + id);
+            $('.id').val(id);
+            $('.pd-tl').val(tenloaisanpham);
+            $('.code').val(masanpham);
+            $('.name').val(tensanpham);
+            $('.price').val(giasanpham);
+            $('.des').val(motasanpham);
+
+            if ($('#brandedt option:selected').length > 0) {
+                $('#brandedt option:selected').removeAttr("selected");
+            }
+            $("#brandedt option:contains(" + tenloaisanpham +
+                ")").attr('selected', 'selected');
+
+            $("#brandedt option:contains(" + tenloaisanpham +
+                ")").prop('selected', true);
+
+
+
+        })
     });
+
+
 </script>

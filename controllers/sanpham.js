@@ -7,9 +7,6 @@ exports.getAll = async(req, res) => {
     let sanpham = await Sanpham.find()
         .populate({ path: "TenLoaiSP", select: "TenLoaiSP" })
         .lean();
-    /* let newData = buy.map((item, index) => ({
-        ...item,
-      }));*/
     res.render("QuanLySanPham", {
         listsanpham: sanpham,
         loaisanpham: loaisanpham,
@@ -23,7 +20,7 @@ exports.getSanpham = function(req, res) {
         .lean()
         .exec((err, doc) => {
             if (!err) {
-                res.render('editsanpham', { sanpham: doc });
+                res.render('/editsanpham', { sanpham: doc });
             }
         });
 };

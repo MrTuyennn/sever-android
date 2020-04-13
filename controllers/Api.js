@@ -1,5 +1,5 @@
 const Loaisanpham = require('../models/loaisanpham');
-
+const Sanpham = require('../models/sanpham');
 // get all
 exports.getAll = async(req, res) => {
     try {
@@ -45,7 +45,7 @@ exports.deleteloaisanpham = async(req, res) => {
 
 // ======> api sanpham
 
-const Sanpham = require('../models/sanpham');
+
 
 exports.getAllsanpham = async(req, res) => {
     try {
@@ -56,14 +56,14 @@ exports.getAllsanpham = async(req, res) => {
     }
 };
 
-exports.getsanpham = async(req, res) => {
-    try {
-        let sanpham = await Sanpham.findById(req.params.id);
-        res.send(sanpham);
-    } catch (error) {
-        console.log(error);
-    }
-};
+// exports.getsanpham = async(req, res) => {
+//     try {
+//         let sanpham = await Sanpham.findById(req.params.id);
+//         res.send(sanpham);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
 // edit 
 // exports.editsanpham = async(req, res) => {
