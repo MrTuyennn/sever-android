@@ -10,10 +10,10 @@ const API = require('../controllers/Api');
 router.get('/api/sanpham', API.getAll);
 
 // edit
-// router.put('/api/sanpham/edit/:id', API.editloaisanpham);
+router.put('/api/sanpham/edit/:id', API.editsanpham);
 
-// // delete 
-// router.delete('/api/loaisanpham/delete/:id', API.deleteloaisanpham);
+// delete 
+router.delete('/api/sanpham/delete/:id', API.deletesanpham);
 
 
 
