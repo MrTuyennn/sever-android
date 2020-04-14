@@ -1,81 +1,43 @@
-const Loaisanpham = require('../models/loaisanpham');
+/// san phẩm
 const Sanpham = require('../models/sanpham');
-// get all
+
 exports.getAll = async(req, res) => {
     try {
-        let loaisanpham = await Loaisanpham.find({});
-        res.send(loaisanpham);
-    } catch (error) {
-        console.log(error);
+        let sanpham = await Sanpham.find().populate({
+            path: "TenLoaiSP",
+            select: "TenLoaiSP && image",
+        });
+        return res.status(200).json({ status: true, data: sanpham });
+    } catch (err) {
+        console.log(err);
+    }
+
+};
+// get theo id 
+exports.getSanpham = async(req, res) => {
+    try {
+        let sanpham = await Sanpham.findById({ _id: req.params.id }).populate({
+            path: "TenLoaiSP",
+            select: "TenLoaiSP",
+        });
+        return res.status(200).json({ status: true, data: sanpham });
+    } catch (err) {
+        console.log(err);
     }
 };
 
-exports.getLoaisanpham = async(req, res) => {
-    try {
-        let loaisanpham = await Loaisanpham.findById(req.params.id);
-        res.send(loaisanpham);
-    } catch (error) {
-        console.log(error);
-    }
-}
 
-// edit 
-exports.editloaisanpham = async(req, res) => {
+
+exports.editsanpham = async(req, res) => {
     try {
-        let loaisanpham = await Loaisanpham.findById(req.params.id);
-        loaisanpham.set(req.body);
-        let result = await loaisanpham.save();
+        let sanpham = await Sanpham.findById(req.params.id);
+        sanpham.set(req.body);
+        let result = await sanpham.save();
         res.send(result);
     } catch (error) {
         console.log(error);
     }
 };
-
-// xóa sản phẩm
-exports.deleteloaisanpham = async(req, res) => {
-    try {
-        let result = await Loaisanpham.deleteOne({ _id: req.body.id });
-        res.send(result);
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-
-
-// ======> api sanpham
-
-
-
-exports.getAllsanpham = async(req, res) => {
-    try {
-        let sanpham = await Sanpham.find({});
-        res.render(sanpham);
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-// exports.getsanpham = async(req, res) => {
-//     try {
-//         let sanpham = await Sanpham.findById(req.params.id);
-//         res.send(sanpham);
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-
-// edit 
-// exports.editsanpham = async(req, res) => {
-//     try {
-//         let sanpham = await Sanpham.findById(req.params.id);
-//         sanpham.set(req.body);
-//         let result = await sanpham.save();
-//         res.send(result);
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
 
 // xóa sản phẩm
 exports.deletesanpham = async(req, res) => {
@@ -85,4 +47,4 @@ exports.deletesanpham = async(req, res) => {
     } catch (error) {
         console.log(error);
     }
-}
+};

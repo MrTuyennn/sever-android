@@ -7,16 +7,16 @@ const router = express.Router();
 const API = require('../controllers/Api');
 
 // get all 
-router.get('/api/loaisanpham', API.getAll);
+router.get('/api/sanpham', API.getAll);
 
 // edit
-router.put('/api/loaisanpham/edit/:id', API.editloaisanpham);
+// router.put('/api/sanpham/edit/:id', API.editloaisanpham);
 
-// delete 
-router.delete('/api/loaisanpham/delete/:id', API.deleteloaisanpham);
+// // delete 
+// router.delete('/api/loaisanpham/delete/:id', API.deleteloaisanpham);
 
 
 
 // ====> sanpham
-router.get('/api/sanpham/', API.getAllsanpham);
+// router.get('/api/sanpham', API.getAllsanpham);
 module.exports = router;
