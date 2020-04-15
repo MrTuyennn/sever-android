@@ -1,5 +1,6 @@
 /// san phẩm
 const Sanpham = require('../models/sanpham');
+const Loaisanpham = require('../models/loaisanpham');
 
 exports.getAll = async(req, res) => {
     try {
@@ -13,10 +14,20 @@ exports.getAll = async(req, res) => {
     }
 
 };
-// get theo id 
+exports.getLoaisanpham = async(req, res) => {
+        try {
+            let loaisanpham = await Loaisanpham.find({});
+            // res.send(loaisanpham);
+            res.status(200).json({ status: true, data: loaisanpham });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    // get theo id 
 exports.getSanpham = async(req, res) => {
+    console.log(req.params.id);
     try {
-        let sanpham = await Sanpham.findById({ _id: req.params.id }).populate({
+        let sanpham = await Sanpham.find({ TenLoaiSP: req.params.id }).populate({
             path: "TenLoaiSP",
             select: "TenLoaiSP",
         });
