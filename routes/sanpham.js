@@ -49,5 +49,5 @@ router.post('/uploadsanpham', upload.single('imageSP'), (request, response) => {
 
 router.get('/editsanpham/:id', sanphamcontroller.getSanpham);
 router.post('/editsanpham', sanphamcontroller.editSanpham);
-router.get('/deletesanpham/:id', sanphamcontroller.deletesanpham);
+router.get('/deletesanpham/:id', sanphamcontroller.deletesanpham); // mở t xem forrm  :D 
 module.exports = router;

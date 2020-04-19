@@ -47,6 +47,7 @@ exports.editSanpham = function(req, res) {
 };
 // xóa sản phẩm
 exports.deletesanpham = function(request, response) {
+    console.log(request.params.id);
     Sanpham.deleteOne({ _id: request.params.id }, (err, doc) => {
         if (!err) {
             response.redirect('/quanlysanpham');

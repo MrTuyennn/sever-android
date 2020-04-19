@@ -50,7 +50,7 @@ exports.editsanpham = async(req, res) => {
     }
 };
 
-// xóa sản phẩm
+// xóa sản p
 exports.deletesanpham = async(req, res) => {
     try {
         let result = await Sanpham.deleteOne({ _id: req.body.id });
