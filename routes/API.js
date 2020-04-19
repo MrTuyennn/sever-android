@@ -18,6 +18,5 @@ router.delete('/api/sanpham/delete/:id', API.deletesanpham);
 
 
 
-// ====> sanpham
-// router.get('/api/sanpham', API.getAllsanpham);
+
 module.exports = router;

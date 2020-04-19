@@ -11,6 +11,8 @@ const adminRoute = require('./routes/admin');
 const loaisanpham = require('./routes/loaisanpham');
 // khai báo từ routes/sanpham
 const sanpham = require('./routes/sanpham');
+// khai báo user 
+const user = require('./routes/user');
 
 const port = 3000;
 
@@ -26,6 +28,7 @@ app.use(adminRoute);
 app.use(loaisanpham);
 app.use(sanpham);
 app.use(api);
+app.use(user);
 
 // kết nối với MongoDB
 const connectDB = require("./config/database");

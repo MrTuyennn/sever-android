@@ -2,6 +2,7 @@
 const Sanpham = require('../models/sanpham');
 const Loaisanpham = require('../models/loaisanpham');
 
+
 exports.getAll = async(req, res) => {
     try {
         let sanpham = await Sanpham.find().populate({
@@ -50,7 +51,7 @@ exports.editsanpham = async(req, res) => {
     }
 };
 
-// xóa sản p
+
 exports.deletesanpham = async(req, res) => {
     try {
         let result = await Sanpham.deleteOne({ _id: req.body.id });
