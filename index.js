@@ -39,9 +39,6 @@ connectDB();
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 // màn hình quản lý người dùng
-app.get('/quanlynguoidung', function(req, res) {
-    res.render('QuanLyNguoiDung');
-});
 
 
 // localhost 

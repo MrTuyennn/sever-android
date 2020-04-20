@@ -10,5 +10,6 @@ router.post('/loginuser', user.loginuser);
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
+router.get('/quanlynguoidung', user.getAllUser);
 
 module.exports = router;

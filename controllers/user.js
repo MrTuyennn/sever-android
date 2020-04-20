@@ -28,22 +28,34 @@ exports.creatUser = async(req, res) => {
 }
 
 exports.loginuser = async(req, res) => {
-    console.log(req.body.email)
-    console.log(req.body.password)
+        console.log(req.body.email)
+        console.log(req.body.password)
 
-    const query = {
-        email: req.body.email,
-        password: req.body.password,
-    }
-    User.findOne(query, (err, result) => {
-        if (result != null) {
-            const objTosend = {
-                username: result.username,
-                email: result.email,
-            }
-            return res.status(200).send(JSON.stringify(objTosend));
-        } else {
-            return res.status(400).send();
+        const query = {
+            email: req.body.email,
+            password: req.body.password,
         }
-    })
-}
+        User.findOne(query, (err, result) => {
+            if (result != null) {
+                const objTosend = {
+                    username: result.username,
+                    email: result.email,
+                }
+                return res.status(200).send(JSON.stringify(objTosend));
+            } else {
+                return res.status(400).send();
+            }
+        })
+    }
+    // get all user info
+exports.getAllUser = function(req, res) {
+    User.find({})
+        .lean()
+        .exec(function(err, data) {
+            res.render('QuanLyNguoiDung', { user: data })
+            console.log(data)
+            if (err) {
+                log(err)
+            }
+        });
+};

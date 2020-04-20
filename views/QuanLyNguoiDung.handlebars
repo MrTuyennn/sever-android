@@ -22,6 +22,13 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {{!-- data tables --}}
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+    {{!-- <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" /> --}}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    {{!-- <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script> --}}
 </head>
 
 <body>
@@ -95,43 +102,36 @@
                 </button>
             </div>
             <div class="col-sm-9 border">
-                <table class="table table-hover">
+               <table id="example" class="display" style="width:100%">
                     <thead>
                         <tr>
-                            <th>STT</th>
-                            <th>ID</th>
-                            <th>Avatar</th>
                             <th>User Name</th>
                             <th>Email</th>
                             <th>SDT</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>01</td>
-                            <td></td>
-                            <td>Nguyễn Ngọc Tuyên</td>
-                            <td>nguyenngoctuyen188@gmail.com</td>
-                            <td>0969734928</td>
+                        {{# each user}}
+                        <tr>                                                                      
+                            <td>
+                                <p class="data">{{username}}</p>
+                            </td>  
+                            <td>
+                                <p class="data">{{email}}</p>
+                            </td>   
+                            <td>
+                                <p class="data">{{phone}}</p>
+                            </td>                          
                         </tr>
-                        <tr>
-                            <td>01</td>
-                            <td>01</td>
-                            <td></td>
-                            <td>Nguyễn Ngọc Tuyên</td>
-                            <td>nguyenngoctuyen188@gmail.com</td>
-                            <td>0969734928</td>
-                        </tr>
-                        <tr>
-                            <td>01</td>
-                            <td>01</td>
-                            <td></td>
-                            <td>Nguyễn Ngọc Tuyên</td>
-                            <td>nguyenngoctuyen188@gmail.com</td>
-                            <td>0969734928</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Email</th>
+                            <th>SDT</th>
+                        </tr>
+                    </tfoot>
                 </table>
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -147,5 +147,10 @@
 
     </div>
 </body>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
 
 </html>
