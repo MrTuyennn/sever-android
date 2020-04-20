@@ -59,3 +59,23 @@ exports.getAllUser = function(req, res) {
             }
         });
 };
+// get người dùng theo email 
+// exports.getUser = async(req, res) => {
+//     try {
+//         let user = await User.find({ email: req.params.id }).populate({
+//             path: "email",
+//         });
+//         return res.status(200).json({ status: true, data: user });
+//     } catch (err) {
+//         console.log(err);
+//     }
+// };
+exports.getalluser = async(req, res) => {
+    try {
+        let user = await User.find({});
+        // res.send(loaisanpham);
+        res.status(200).json({ status: true, data: user });
+    } catch (error) {
+        console.log(error);
+    }
+}
