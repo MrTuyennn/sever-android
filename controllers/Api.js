@@ -2,7 +2,7 @@
 const Sanpham = require('../models/sanpham');
 const Loaisanpham = require('../models/loaisanpham');
 
-
+// Lấy Toàn Bộ Sản Phẩm 
 exports.getAll = async(req, res) => {
     try {
         let sanpham = await Sanpham.find().populate({
@@ -15,6 +15,7 @@ exports.getAll = async(req, res) => {
     }
 
 };
+// lấy toàn bộ sản phẩm
 exports.getLoaisanpham = async(req, res) => {
         try {
             let loaisanpham = await Loaisanpham.find({});
@@ -24,7 +25,7 @@ exports.getLoaisanpham = async(req, res) => {
             console.log(error);
         }
     }
-    // get theo id 
+    // lấy sản phẩm theo Id của loại sản phẩm
 exports.getSanpham = async(req, res) => {
     console.log(req.params.id);
     try {
@@ -37,8 +38,42 @@ exports.getSanpham = async(req, res) => {
         console.log(err);
     }
 };
+// lấy sản phẩm theo Id  
+exports.getOnesanpham = async(req, res) => {
+    try {
+        let sanpham = await Sanpham.findById({ _id: req.params.id })
 
+        return res.status(200).json({ status: true, data: sanpham });
+    } catch (error) {
+        console.log(error);
+    }
+};
 
+// lấy sản phẩm theo Giá <= 5.000.000
+exports.getPricelte = async(req, res) => {
+    try {
+        let sanpham = await Sanpham.find({ GiaSP: { $lte: 5000000 } }).populate({
+            path: "TenLoaiSP",
+            select: "TenLoaiSP"
+        })
+        return res.status(200).json({ status: true, data: sanpham });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// lấy sản phẩm theo giá >= 5.000.000
+exports.getPricegte = async(req, res) => {
+    try {
+        let sanpham = await Sanpham.find({ GiaSP: { $gte: 5000000 } }).populate({
+            path: "TenLoaiSP",
+            select: "TenLoaiSP"
+        })
+        return res.status(200).json({ status: true, data: sanpham });
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 exports.editsanpham = async(req, res) => {
     try {
