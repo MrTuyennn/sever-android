@@ -59,17 +59,35 @@ exports.getAllUser = function(req, res) {
             }
         });
 };
-// get người dùng theo email 
-// exports.getUser = async(req, res) => {
-//     try {
-//         let user = await User.find({ email: req.params.id }).populate({
-//             path: "email",
-//         });
-//         return res.status(200).json({ status: true, data: user });
-//     } catch (err) {
-//         console.log(err);
-//     }
-// };
+//get người dùng theo ID
+exports.getUser = async(req, res) => {
+    try {
+        let user = await User.find({ _id: req.params.id })
+        return res.status(200).json({ status: true, data: user });
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+//get người dùng theo email 
+exports.getUseremail = async(req, res) => {
+
+        try {
+            let user = await User.find({ email: req.params.email });
+            return res.status(200).json({ status: true, data: user })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    // get người dùng theo phone của
+exports.getUserphone = async(req, res) => {
+    try {
+        let user = await User.find({ phone: req.params.phone });
+        return res.status(200).json({ status: true, data: user })
+    } catch (error) {
+        console.log(error);
+    }
+}
 exports.getalluser = async(req, res) => {
     try {
         let user = await User.find({});

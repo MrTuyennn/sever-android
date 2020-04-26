@@ -41,7 +41,10 @@ exports.getSanpham = async(req, res) => {
 // lấy sản phẩm theo Id  
 exports.getOnesanpham = async(req, res) => {
     try {
-        let sanpham = await Sanpham.findById({ _id: req.params.id })
+        let sanpham = await Sanpham.findById({ _id: req.params.id }).populate({
+            path: "TenLoaiSP",
+            select: "TenLoaiSP",
+        })
 
         return res.status(200).json({ status: true, data: sanpham });
     } catch (error) {
