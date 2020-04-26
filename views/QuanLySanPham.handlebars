@@ -144,7 +144,7 @@
                             <td>
                                 <a href="javascript:void(0);" data-pd_id="{{_id}}" data-pd_tl="{{TenLoaiSP.TenLoaiSP}}"
                                     data-pd_code="{{MaSP}}" data-pd_name="{{TenSP}}" data-pd_price="{{GiaSP}}"
-                                    data-pd_des="{{MotaSP}}" class="edit" data-toggle="modal"
+                                    data-pd_des="{{MotaSP}}" data-pd_img="{{imageSP}}" class="edit" data-toggle="modal"
                                     data-target="#myModal">Edit</a>
                                 <a href="/deletesanpham/{{_id}}" class="btnDelete"
                                     onclick="return confirm('Are you sure to delete this song?')">Delete</a>
@@ -302,14 +302,17 @@
             var tensanpham = $(this).data('pd_name');
             var giasanpham = $(this).data('pd_price');
             var motasanpham = $(this).data('pd_des');
+            var hinhanhsanpham = $(this).data('pd_img');
 
-           alert("data" + id);
+          
             $('.id').val(id);
             $('.pd-tl').val(tenloaisanpham);
             $('.code').val(masanpham);
             $('.name').val(tensanpham);
             $('.price').val(giasanpham);
             $('.des').val(motasanpham);
+            $('.image').val(hinhanhsanpham);
+
 
             if ($('#brandedt option:selected').length > 0) {
                 $('#brandedt option:selected').removeAttr("selected");
