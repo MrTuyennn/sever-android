@@ -1,8 +1,10 @@
 // tạo tài khoản user
 const User = require('../models/user');
+const mongoose = require('mongoose');
 exports.creatUser = async(req, res) => {
     try {
-        let user = await User({
+        let user = await User({      
+            _id :new mongoose.Types.ObjectId(),
             username: req.body.username,
             email: req.body.email,
             phone: req.body.phone,
@@ -30,6 +32,7 @@ exports.creatUser = async(req, res) => {
 exports.loginuser = async(req, res) => {
         console.log(req.body.email)
         console.log(req.body.password)
+        // console.log(Id_user)
 
         const query = {
             email: req.body.email,
@@ -38,8 +41,10 @@ exports.loginuser = async(req, res) => {
         User.findOne(query, (err, result) => {
             if (result != null) {
                 const objTosend = {
+                    _id: result._id,
                     username: result.username,
                     email: result.email,
+                    phone:result.phone,
                 }
                 return res.status(200).send(JSON.stringify(objTosend));
             } else {
